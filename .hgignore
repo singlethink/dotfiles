@@ -1,0 +1,3 @@
+# Global hgignore file
+~$
+(^|/)\.DS_Store$

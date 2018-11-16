@@ -1,0 +1,26 @@
+[user]
+	name = Matthew Van Gundy
+[alias]
+	submit = push origin HEAD:refs/for/master
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+        incoming = "!git remote update -p; git log ..@{u}"
+        outgoing = log @{u}..
+
+        # Shows all commits that are in any of local branches but not
+        # in any of remote tracking branches for origin (what you have
+        # that origin doesn’t).
+        mine = log --branches --not --remotes=origin
+
+        # is there anything here that I'm not tracking with git?
+        others="ls-files --others --exclude-from=.git/info/exclude"
+
+[core]
+	excludesfile = ~/.gitignore
+[push]
+	default = simple
