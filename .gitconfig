@@ -24,3 +24,7 @@
 	excludesfile = ~/.gitignore
 [push]
 	default = simple
+[http]
+        cookiefile = .gitcookies
+[include]
+        path = .gitconfig.local

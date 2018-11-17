@@ -1,0 +1,5 @@
+[user]
+	email = matt@singlethink.net
+        signingkey = C452100D
+[commit]
+        gpgsign = true
