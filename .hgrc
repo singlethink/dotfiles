@@ -1,9 +1,22 @@
 [ui]
 ignore.global = ~/.hgignore
+merge = emacs
 
 [merge-tools]
+emacs.args = -q --eval "(ediff-merge-with-ancestor \""$local"\" \""$other"\" \""$base"\" nil \""$output"\")"
 diff3.args = $local $base $other -m > $output
 filemerge.executable = ${SDIR}/bin/opendiff-w
 filemerge.args = $local $other -ancestor $base -merge $output
 meld.args = $base $local $other
 meld.priority = 100
+
+[extensions]
+transplant =
+
+[mq]
+# Don't push mq patches
+secret = True
+# And let us push and pop keeping compatible changes
+keepchanges = True
+
+%include .hgrc.local
